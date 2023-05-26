@@ -40,7 +40,6 @@ class Player(char):
     self._energy = 100
     self.__dmg = 0
 
-
   def load_images(self, sprite, animation_steps):
     #extract images from spritesheet
     animation_list = []
@@ -82,10 +81,10 @@ class Player(char):
         #attack
         if key[pygame.K_r] or key[pygame.K_t]:
           #determine which attack type was used
-          if key[pygame.K_r] and self._energy >= 20:
+          if key[pygame.K_r] and self._energy >= 15:
             if self.attack_cooldown == 0:
-              self.__dmg = 20
-              self._energy -= 20
+              self.__dmg = 15
+              self._energy -= 15
             self.attack(target)
             self.attack_type = 1
           if key[pygame.K_t] and self._energy >= 25:
@@ -111,10 +110,10 @@ class Player(char):
         #attack
         if key[pygame.K_o] or key[pygame.K_p]:
           #determine which attack type was used
-          if key[pygame.K_o] and self._energy >= 15:
+          if key[pygame.K_o] and self._energy >= 20:
             if self.attack_cooldown == 0:
-              self.__dmg = 15
-              self._energy -= 15
+              self.__dmg = 20
+              self._energy -= 20
             self.attack(target)
             self.attack_type = 1
           if key[pygame.K_p] and self._energy >= 30:
